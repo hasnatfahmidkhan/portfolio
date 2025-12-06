@@ -9,6 +9,8 @@ import tastio from "../assets/tastio.png";
 import gamespace from "../assets/gamespace.png";
 import greenfabric from "../assets/greenfabric.png";
 import portfolio from "../assets/portfolio.png";
+import prodify from "../assets/prodify.png";
+import amardelivery from "../assets/amardelivery.png";
 
 const Projects = () => {
   const containerRef = useRef(null);
@@ -70,36 +72,37 @@ const Projects = () => {
       title: "Portfolio",
       description: "A modern, responsive personal portfolio built to showcase my skills, projects, and experience as a MERN Stack Developer.",
       image: portfolio,
-      github: "#",
+      github: "https://github.com/hasnatfahmidkhan/portfolio",
       demo: "https://hasnatfahmid.netlify.app/",
       tags: [
         { name: "React", bg: "bg-yellow-100 dark:bg-yellow-900/30", text: "text-yellow-800 dark:text-yellow-300" },
         { name: "GSAP", bg: "bg-sky-100 dark:bg-sky-900/30", text: "text-sky-800 dark:text-sky-300" },
-        { name: "Framer Motion", bg: "bg-slate-100 dark:bg-slate-700", text: "text-slate-800 dark:text-slate-300" }
+        { name: "Framer Motion", bg: "bg-slate-100 dark:bg-slate-700", text: "text-slate-800 dark:text-slate-300" },
       ]
     },
     {
-      title: "FitTrack",
-      description: "Workout logger and progress visualization app. Users can define custom exercises and view charts of their performance over time.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDa0xQPSIjPna2FXtyTufgRIpOD3hXRZy3qA1Nrvf2_RQd7J2SrG_M0rSBIwI9P65ZP14ar6Q6NrLZGpCgWSsjm8GH848uf-2hvIkOo7CmXotAW7C_pKMSStZZx3YLw3OWREtuDFrViwVXWLGcyXcCdpEyF5gjV3Zgean5Fyjeemu6d_5fZOpz_oFYDBPnn6DRJOfXCtyx3m8zvqEn9-X4Fvh_rwDbgFjeRWl4ncozDffGa2KoEKjmARsACtu_CH3cE0YIGxRUwOd8",
-      github: "#",
-      demo: "#",
+      title: "Prodify",
+      description: "Prodify is a web app where users can discover, explore, and access a curated collection of productivity applications to boost efficiency and workflow.",
+      image: prodify,
+      github: "https://github.com/hasnatfahmidkhan/prodify",
+      demo: "https://prodify-app.netlify.app/",
       tags: [
         { name: "React", bg: "bg-blue-100 dark:bg-blue-900/30", text: "text-blue-800 dark:text-blue-300" },
-        { name: "Chart.js", bg: "bg-red-100 dark:bg-red-900/30", text: "text-red-800 dark:text-red-300" },
-        { name: "MongoDB", bg: "bg-green-100 dark:bg-green-900/30", text: "text-green-800 dark:text-green-300" }
+        { name: "Motion", bg: "bg-red-100 dark:bg-red-900/30", text: "text-red-800 dark:text-red-300" },
+        { name: "Axios", bg: "bg-green-100 dark:bg-green-900/30", text: "text-green-800 dark:text-green-300" }
       ]
     },
     {
-      title: "SnippetVault",
-      description: "A secure place for developers to store, organize, and share useful code snippets. Features syntax highlighting and tagging.",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDlkGnJdiIadhSce8eLEKAdE4UK52LObZDdd5S9HxQVQ5LuWG93J_cIPWyHDpqIS8925jisrotnvkFIgqZpu6Dbusn1H8sBKL6iB8KwapHALINYxMFqAChgx3nUQ66iZ_-in_VZRPCgafa-nJnrjOc-rKYGgUYIwtJVPDtft8JyFUQQU_S4d1qbA0YNPyYPTXiLviLH7BNWkWUtvmHVfiscqaYL8QbvR7r7rgsFpogAhVDgisZeycvgQffkhbaZzTnWu9bQCQe4m2s",
-      github: "#",
-      demo: "#",
+      title: "Zap Shift",
+      description: "ZapShift is a fast and intuitive delivery application designed to streamline ordering, real-time tracking, and secure payments through a modern, user-friendly interface.",
+      image: amardelivery,
+      github: "https://github.com/hasnatfahmidkhan/zap-shift-client",
+      demo: "https://zap-shift-web.web.app/",
       tags: [
-        { name: "Prisma", bg: "bg-violet-100 dark:bg-violet-900/30", text: "text-violet-800 dark:text-violet-300" },
-        { name: "PostgreSQL", bg: "bg-cyan-100 dark:bg-cyan-900/30", text: "text-cyan-800 dark:text-cyan-300" },
-        { name: "NextAuth", bg: "bg-gray-100 dark:bg-gray-700", text: "text-gray-800 dark:text-gray-300" }
+        { name: "React", bg: "bg-violet-100 dark:bg-violet-900/30", text: "text-violet-800 dark:text-violet-300" },
+        { name: "Stripe", bg: "bg-cyan-100 dark:bg-cyan-900/30", text: "text-cyan-800 dark:text-cyan-300" },
+        { name: "MongoDB", bg: "bg-gray-100 dark:bg-gray-700", text: "text-gray-800 dark:text-gray-300" },
+        { name: "Express", bg: "bg-pink-100 dark:bg-pink-900/30", text: "text-pink-800 dark:text-pink-300" }
       ]
     }
   ];
