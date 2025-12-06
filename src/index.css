@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed navbar */
+}
+
+html, body {
+  scrollbar-width: none;
+}
+
+@layer utilities {
+  .text-outline-stroke {
+    -webkit-text-stroke: 1px #00df45;
+    color: transparent;
+  }
+}
+
+
+
+
+
+/* Custom styles that are harder to map to pure utilities or specific animations */
