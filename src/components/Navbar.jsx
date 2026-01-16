@@ -71,7 +71,8 @@ const Navbar = () => {
         const yFn = element.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top: yFn - 100, behavior: "smooth" });
       } else {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
+        const yFn = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: yFn - 100, behavior: "smooth" });
       }
       setActiveSection(targetId);
       setIsOpen(false);
