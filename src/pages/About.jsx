@@ -35,7 +35,7 @@ const About = () => {
   return (
     <div ref={containerRef} className="overflow-hidden">
       <section className="flex-grow flex flex-col justify-center px-6 md:px-12 lg:px-24 py-12 relative">
-        <div className="container mx-auto z-10 max-w-6xl">
+        <div className="container mx-auto z-10 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div

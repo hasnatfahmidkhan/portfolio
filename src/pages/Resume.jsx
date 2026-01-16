@@ -3,6 +3,7 @@ import { FaReact, FaNode, FaJs, FaDatabase, FaServer, FaHtml5, FaGitAlt } from '
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { SiNextdotjs } from 'react-icons/si';
 
 const Resume = () => {
   const containerRef = useRef(null);
@@ -38,14 +39,14 @@ const Resume = () => {
   ];
 
   const skillsData = [
-    { icon: FaReact, name: "React.js", color: "text-blue-400" }, // Added custom colors for variety if needed, or stick to consistent classes
-    { icon: null, label: "N", name: "Next.js (Basic)", color: "text-gray-800 dark:text-white" }, // Custom text icon for Next.js
-    { icon: FaNode, name: "Node.js", color: "text-green-500" },
-    { icon: FaJs, name: "JavaScript (ES6+)", color: "text-yellow-400" },
-    { icon: FaDatabase, name: "MongoDB", color: "text-green-600" },
-    { icon: FaServer, name: "Express.js", color: "text-gray-500" },
-    { icon: FaHtml5, name: "HTML5 & CSS3", color: "text-orange-500" },
-    { icon: FaGitAlt, name: "Git & GitHub", color: "text-red-500" }
+    { icon: FaReact, label: "R", name: "React.js", color: "text-blue-400" }, // Added custom colors for variety if needed, or stick to consistent classes
+    { icon: SiNextdotjs, label: "N", name: "Next.js (Basic)", color: "text-gray-800 dark:text-white" }, // Custom text icon for Next.js
+    { icon: FaNode, label: "N", name: "Node.js", color: "text-green-500" },
+    { icon: FaJs, label: "J", name: "JavaScript (ES6+)", color: "text-yellow-400" },
+    { icon: FaDatabase, label: "M", name: "MongoDB", color: "text-green-600" },
+    { icon: FaServer, label: "E", name: "Express.js", color: "text-gray-500" },
+    { icon: FaHtml5, label: "H", name: "HTML5 & CSS3", color: "text-orange-500" },
+    { icon: FaGitAlt, label: "G", name: "Git & GitHub", color: "text-red-500" }
   ];
 
   // Animation variants
@@ -80,7 +81,7 @@ const Resume = () => {
       {/* GSAP Background */}
       <div ref={bgShapeRef} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
-      <div className="container mx-auto z-10 max-w-6xl">
+      <div className="container mx-auto max-w-7xl z-10">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}

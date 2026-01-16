@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Outlet } from "react-router";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Preloader from "./components/Preloader";
@@ -33,27 +34,10 @@ function App() {
       {!isLoading && (
         <>
           <Navbar />
-
-          <div className="lg:space-y-20">
-            <div id="home">
-              <Home />
-            </div>
-            <div id="about">
-              <About />
-            </div>
-            <div id="services">
-              <Services />
-            </div>
-            <div id="resume">
-              <Resume />
-            </div>
-            <div id="portfolio">
-              <Projects />
-            </div>
-            <div id="contact">
-              <Contact />
-            </div>
-          </div>
+          
+          <main className="flex-grow">
+            <Outlet />
+          </main>
 
           {/* Global Background Blobs */}
           <div className="fixed top-20 right-20 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>

@@ -67,7 +67,7 @@ const Services = () => {
       {/* GSAP Background Element */}
       <div ref={bgShapeRef} className="absolute top-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10" />
 
-      <div className="container mx-auto z-10 flex flex-col justify-center h-full">
+      <div className="container mx-auto max-w-7xl z-10 flex flex-col justify-center h-full">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}

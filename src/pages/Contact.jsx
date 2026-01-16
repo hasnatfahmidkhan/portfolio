@@ -138,7 +138,7 @@ const Contact = () => {
         className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"
       />
 
-      <div className="container mx-auto z-10 max-w-6xl">
+      <div className="container mx-auto z-10 max-w-7xl">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}

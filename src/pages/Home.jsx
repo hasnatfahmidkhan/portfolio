@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <section class="flex-grow flex items-center justify-center px-6 md:px-12 lg:px-24 py-12 relative overflow-hidden min-h-screen">
-      <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-28 lg:gap-16 items-center">
+      <div class="container mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-28 lg:gap-16 items-center">
         <div ref={leftContentRef} class="space-y-6 z-10 order-2 lg:order-1">
           <div class="space-y-2">
             <h1 class="text-4xl md:text-6xl font-bold dark:text-white text-gray-900 leading-tight">

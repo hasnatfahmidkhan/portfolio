@@ -1,11 +1,20 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { useLocation, useNavigate } from "react-router";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // If we are on a project details page, force active section to 'portfolio'
+    if (location.pathname.startsWith("/project/")) {
+        setActiveSection("portfolio");
+        return; // Stop scroll listener from overwriting this
+    }
+
     const handleScroll = () => {
       const sections = [
         "home",
@@ -31,8 +40,11 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Initial check
+    handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const navLinks = [
     { name: "Home", path: "#home" },
@@ -51,7 +63,9 @@ const Navbar = () => {
 
   const handleNavClick = (e, path) => {
     e.preventDefault();
-    const element = document.getElementById(path.substring(1));
+    const targetId = path.substring(1);
+    const element = document.getElementById(targetId);
+
     if (element) {
       if (path === "#portfolio") {
         const yFn = element.getBoundingClientRect().top + window.scrollY;
@@ -59,58 +73,63 @@ const Navbar = () => {
       } else {
         element.scrollIntoView({ behavior: "smooth", block: "center" });
       }
-      setActiveSection(path.substring(1));
+      setActiveSection(targetId);
       setIsOpen(false);
+    } else {
+        // If element not found (e.g., we are on details page), go to home and pass target ID in state
+        navigate("/", { state: { scrollTo: targetId } });
     }
   };
 
   return (
-    <nav class="w-full py-6 px-6 md:px-12 lg:px-24 flex justify-between items-center z-50 fixed top-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm transition-all duration-300 border-b border-gray-200 dark:border-gray-800">
-      <div class="text-2xl font-bold tracking-tight dark:text-white text-gray-900">
-        Hasnat<span class="text-primary">.</span>
-      </div>
+    <nav class="w-full fixed top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm transition-all duration-300 border-b border-gray-200 dark:border-gray-800">
+      <div class="container mx-auto max-w-7xl py-6 px-2 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tight dark:text-white text-gray-900">
+          Hasnat<span class="text-primary">.</span>
+        </div>
 
-      {/* Desktop Menu */}
-      <div class="hidden md:flex space-x-8 text-sm font-medium">
-        {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.path}
-            class={`transition-colors ${isActive(link.path)}`}
-            onClick={(e) => handleNavClick(e, link.path)}
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
-
-      {/* Mobile Menu Button */}
-      <button
-        class="md:hidden text-gray-600 dark:text-white focus:outline-none"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? (
-          <FaTimes className="text-2xl" />
-        ) : (
-          <FaBars className="text-2xl" />
-        )}
-      </button>
-
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div class="absolute top-20 left-0 w-full bg-white dark:bg-surface-dark p-6 shadow-xl md:hidden z-40 flex flex-col space-y-4">
+        {/* Desktop Menu */}
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.path}
-              class={`block ${isActive(link.path)}`}
+              class={`transition-colors ${isActive(link.path)}`}
               onClick={(e) => handleNavClick(e, link.path)}
             >
               {link.name}
             </a>
           ))}
         </div>
-      )}
+
+        {/* Mobile Menu Button */}
+        <button
+          class="md:hidden text-gray-600 dark:text-white focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? (
+            <FaTimes className="text-2xl" />
+          ) : (
+            <FaBars className="text-2xl" />
+          )}
+        </button>
+
+        {/* Mobile Menu Dropdown */}
+        {isOpen && (
+          <div class="absolute top-full left-0 w-full bg-white dark:bg-surface-dark p-6 shadow-xl md:hidden z-40 flex flex-col space-y-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.path}
+                class={`block ${isActive(link.path)}`}
+                onClick={(e) => handleNavClick(e, link.path)}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
     </nav>
   );
 };
