@@ -67,7 +67,7 @@ const ProjectDetails = () => {
       animate="visible"
       className="min-h-screen py-16 px-6 md:px-12 lg:px-24 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body"
     >
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <motion.button
           variants={itemVariants}
           onClick={() => navigate(-1)}
